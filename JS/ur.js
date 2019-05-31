@@ -1,4 +1,5 @@
 // GLOBAL VARIABLES
+
 let parseP1 = {0:"xx", 1:"da", 2:"ca", 3:"ba", 4:"aa", 5:"ab", 6:"bb", 7:"cb", 8:"db", 9:"eb", 10:"fb", 11:"gb", 12:"hb", 13:"ha", 14:"ga", 15:"end0"};
 let parseP2 = {0:"yy", 1:"dc", 2:"cc", 3:"bc", 4:"ac", 5:"ab", 6:"bb", 7:"cb", 8:"db", 9:"eb", 10:"fb", 11:"gb", 12:"hb", 13:"hc", 14:"gc", 15:"end1"};
 let routeArr = [parseP1, parseP2];
@@ -13,6 +14,7 @@ let p2Points = document.querySelector("#infoDisplayp2Points");
 var newB;
 var dragged;
 var listPlaces = ["xx", "yy", "aa", "ab", "ac", "ba", "bb", "bc", "ca", "cb", "cc", "da", "db", "dc", "eb", "end0", "fb", "end1", "ga", "gb", "gc", "ha", "hb", "hc"];
+
 // INIT
 
 window.onload = init;
@@ -26,6 +28,7 @@ function init() {
 }
 
 // BOARD
+
 class board {
   constructor(participants, turn) {
     this.participants = [participants[0], participants[1]];

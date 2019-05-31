@@ -443,3 +443,12 @@ button:hover {
   content: "";
   padding-right: 5px;
 }
+@media (max-width: 600px) {
+  #infoDiv {
+    display: none;
+    border: 1px solid red;
+  }
+  #dialogBox {
+    display: none;
+  }
+}
