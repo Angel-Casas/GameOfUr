@@ -1,0 +1,445 @@
+/* RESET */
+html, body,
+h1, h2, h3, h4, h5, h6,
+a, p, span,
+em, small, strong,
+sub, sup,
+mark, del, ins, strike,
+abbr, dfn,
+blockquote, q, cite,
+code, pre,
+ol, ul, li, dl, dt, dd,
+div, section, article,
+main, aside, nav,
+header, hgroup, footer,
+img, figure, figcaption,
+address, time,
+audio, video,
+canvas, iframe,
+details, summary,
+fieldset, form, label, legend,
+table, caption,
+tbody, tfoot, thead,
+tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+* {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main {
+    display: block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+img {
+    border-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+    content: "";
+    content: none;
+}
+[hidden] {
+    display: none !important;
+}
+
+[disabled] {
+    cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+.srOnly {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    left: -9999px;
+    top: -9999px;
+}
+
+/* MAIN CSS */
+html {
+  font-size: 10px;
+  font-family: 'Unna', serif;
+  color: white;
+}
+#wrapper {
+  min-height: 100vh;
+  background-color: rgb(30, 30, 30);
+}
+h1, h2, h3, h4, h5 {
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 3.4rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2.8rem;
+}
+h5 {
+  font-size: 2.6rem;
+}
+header {
+  text-align: center;
+  padding: 10px 0;
+  color: rgb(221, 182, 78);
+}
+#mainWrapper {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 1rem;
+  margin: 0 20px;
+}
+#boardDiv {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 0;
+}
+#boardList {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 50px 50px 50px 1fr;
+  grid-template-areas:
+  "xx aa ab ac yy"
+  "xx ba bb bc yy"
+  "xx ca cb cc yy"
+  "xx da db dc yy"
+  "xx end0 eb end1  yy"
+  "xx end0 fb end1  yy"
+  "xx ga gb gc yy"
+  "xx ha hb hc yy";
+  grid-gap: 0 0;
+  width: 100%;
+  margin: 0 auto;
+}
+#boardList .boardMember {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  text-align: center;
+}
+.boardMember:nth-child(1) {
+  grid-area: xx;
+  width: 100% !important;
+  height:400px !important;
+  border: none !important;
+}
+.boardMember:nth-child(2) {
+  grid-area: aa;
+}
+.boardMember:nth-child(3) {
+  grid-area: ab;
+}
+.boardMember:nth-child(4) {
+  grid-area: ac;
+}
+.boardMember:nth-child(5) {
+  grid-area: ba;
+}
+.boardMember:nth-child(6) {
+  grid-area: bb;
+}
+.boardMember:nth-child(7) {
+  grid-area: bc;
+}
+.boardMember:nth-child(8) {
+  grid-area: ca;
+}
+.boardMember:nth-child(9) {
+  grid-area: cb;
+}
+.boardMember:nth-child(10) {
+  grid-area: cc;
+}
+.boardMember:nth-child(11) {
+  grid-area: da;
+}
+.boardMember:nth-child(12) {
+  grid-area: db;
+}
+.boardMember:nth-child(13) {
+  grid-area: dc;
+}
+.boardMember:nth-child(14) {
+  grid-area: eb;
+}
+.boardMember:nth-child(15) {
+  grid-area: end0;
+  height: 100px !important;
+  border: none !important;
+}
+.boardMember:nth-child(16) {
+  grid-area: fb;
+}
+.boardMember:nth-child(17) {
+  grid-area: end1;
+  height: 100px !important;
+  border: none !important;
+}
+.boardMember:nth-child(18) {
+  grid-area: ga;
+}
+.boardMember:nth-child(19) {
+  grid-area: gb;
+}
+.boardMember:nth-child(20) {
+  grid-area: gc;
+}
+.boardMember:nth-child(21) {
+  grid-area: ha;
+}
+.boardMember:nth-child(22) {
+  grid-area: hb;
+}
+.boardMember:nth-child(23) {
+  grid-area: hc;
+}
+.boardMember:nth-child(24) {
+  grid-area: yy;
+  width: 100% !important;
+  height:400px !important;
+  border: none !important;
+}
+.special {
+  outline: 1px solid white;
+  outline-offset: -15px;
+}
+.inmune {
+  outline: 1px solid white;
+  outline-offset: -10px;
+}
+.active {
+  cursor: pointer;
+}
+.active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+.active.p1::before {
+  background-color: rgb(255, 70, 70);
+}
+.active.p2::before {
+  background-color: rgb(89, 154, 201);
+}
+.path {
+  background-color: rgba(99, 255, 110, .8);
+}
+.path::before,
+.eat::before {
+  content: "\2713";
+}
+.forbidden {
+  background-color: rgba(255, 110, 110, .6);
+}
+.forbidden::before {
+  content: "\00d7";
+}
+.eat {
+  background-color: rgba(255, 252, 0, .6);
+}
+.over {
+  border: 2px dotted white !important;
+  background-color: rgba(255, 255, 255, .1);
+}
+#boardDiv > div {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 100%;
+}
+.turn::before {
+  content: "Your Turn";
+  position: absolute;
+  bottom: -38px;
+  border-top: 2px solid white;
+  line-height: 1.6rem;
+}
+.token {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+.p0 {
+  background-color: rgb(255, 70, 70);
+}
+.p1 {
+  background-color: rgb(89, 154, 201);
+}
+#victory {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  top: 0;
+  left: 0;
+  border: 1px solid rgb(221, 182, 78);
+  border-radius: 1rem;
+  background-color: rgb(30, 30, 30);
+  text-align: center;
+  color: rgb(221, 182, 78);
+}
+#victory h5 {
+  font-size: 3.8rem;
+}
+#victory p {
+  font-size: 2.4rem;
+}
+#victory img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+#infoDiv {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  text-align: right;
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 1rem 0;
+  margin-top: 5px;
+}
+#infoDiv .infoDisplayData {
+  padding: 1rem;
+}
+#infoDiv .infoDisplayFeed {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(221, 182, 78);
+}
+#diceRoll {
+  text-align: center;
+  font-size: 2.4rem;
+  height: 100px;
+}
+#toolBox {
+  margin: 5px 0;
+}
+button {
+  text-transform: uppercase;
+  background-color: inherit;
+  color: rgb(221, 182, 78);
+  padding: 10px;
+  border: 1px solid rgb(221, 182, 78);
+  cursor: pointer;
+}
+button:hover {
+  color: rgb(30, 30, 30);
+  background-color: rgb(221, 182, 78);
+}
+#dialogBox {
+  min-height: 60px;
+  width: 200px;
+  text-align: center;
+}
+#dialogBox h5 {
+  text-decoration: underline;
+  color: rgb(221, 182, 78);
+}
+#dialogBox > p {
+  background-color: inherit;
+  text-align: left;
+}
+#dialogBox p.p0 {
+  border-left: 2px solid rgb(255, 70, 70);
+}
+#dialogBox p.p1 {
+  border-left: 2px solid rgb(89, 154, 201);
+}
+#dialogBox p::before {
+  content: "";
+  padding-right: 5px;
+}

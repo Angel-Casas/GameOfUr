@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Unna&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Game of Ur</h1>
+      </header>
+      <main id="mainWrapper">
+        <div id="boardDiv">
+          <ul id="boardList">
+            <li id="xx" class="boardMember">
+              <span class="p0 token" draggable="true"></span>
+              <span class="p0 token" draggable="true"></span>
+              <span class="p0 token" draggable="true"></span>
+              <span class="p0 token" draggable="true"></span>
+              <span class="p0 token" draggable="true"></span>
+              <span class="p0 token" draggable="true"></span>
+              <span class="p0 token" draggable="true"></span>
+            </li>
+            <li id="aa" class="boardMember special"></li>
+            <li id="ab" class="boardMember"></li>
+            <li id="ac" class="boardMember special"></li>
+            <li id="ba" class="boardMember"></li>
+            <li id="bb" class="boardMember"></li>
+            <li id="bc" class="boardMember"></li>
+            <li id="ca" class="boardMember"></li>
+            <li id="cb" class="boardMember"></li>
+            <li id="cc" class="boardMember"></li>
+            <li id="da" class="boardMember"></li>
+            <li id="db" class="boardMember special inmune"></li>
+            <li id="dc" class="boardMember"></li>
+            <li id="eb" class="boardMember"></li>
+            <li id="end0" class="boardMember"></li>
+            <li id="fb" class="boardMember"></li>
+            <li id="end1" class="boardMember"></li>
+            <li id="ga" class="boardMember special"></li>
+            <li id="gb" class="boardMember"></li>
+            <li id="gc" class="boardMember special"></li>
+            <li id="ha" class="boardMember"></li>
+            <li id="hb" class="boardMember"></li>
+            <li id="hc" class="boardMember"></li>
+            <li id="yy" class="boardMember">
+              <span class="p1 token" draggable="true"></span>
+              <span class="p1 token" draggable="true"></span>
+              <span class="p1 token" draggable="true"></span>
+              <span class="p1 token" draggable="true"></span>
+              <span class="p1 token" draggable="true"></span>
+              <span class="p1 token" draggable="true"></span>
+              <span class="p1 token" draggable="true"></span>
+            </li>
+          </ul>
+        </div>
+        <div id="warning"></div>
+        <div id="victory">
+          <h5>Congratulations</h5>
+          <img src="./img/victory.png" alt="victoryLogo" style="width: 100px; height: auto;">
+          <button id="restart">Restart</button>
+          <p></p>
+        </div>
+        <div id="diceRoll">
+        </div>
+        <button id="skipTurn">Skip Turn</button>
+        <div id="toolBox">
+          <button id="newRoll">New Roll</button>
+          <button id="newGame">New Game</button>
+        </div>
+        <div id="infoDiv">
+          <ul class="infoDisplayP1">
+            <li class="infoDisplayData">Player 1: <span class="infoDisplayFeed">Tana</span></li>
+            <li class="infoDisplayData">Tokens: <span id="infoDisplayp1Token" class="infoDisplayFeed">7</span></li>
+            <li class="infoDisplayData">Points: <span id="infoDisplayp1Points" class="infoDisplayFeed">0</span></li>
+          </ul>
+          <ul class="infoDisplayP2">
+            <li class="infoDisplayData">Player 2: <span class="infoDisplayFeed">Suso</span></li>
+            <li class="infoDisplayData">Tokens: <span id="infoDisplayp2Token" class="infoDisplayFeed">7</span></li>
+            <li class="infoDisplayData">Points: <span id="infoDisplayp2Points" class="infoDisplayFeed">0</span></li>
+          </ul>
+        </div>
+        <div id="dialogBox">
+        </div>
+      </main>
+    </div>
+    <script type="text/javascript" src="./JS/ur.js"></script>
+  </body>
+</html>
