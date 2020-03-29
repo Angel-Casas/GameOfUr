@@ -13,6 +13,59 @@
         <h1>Royal Game of Ur</h1>
       </header>
       <main id="mainWrapper">
+        <button id="btnIntro" class="btn">Introducción</button>
+        <div id="introduction">
+          <div id="slidesWrapper">
+            <div class="slide" data-slide="0" style="display: block">
+              <p>Cada jugador empieza con 7 fichas.</p>
+              <p>Al empezar se elige aleatoriamente al primer jugador.</p>
+              <div class="squareZone">
+                <span class="p0 token"></span>
+                <span class="p0 token"></span>
+                <span class="p0 token"></span>
+                <span class="p0 token"></span>
+                <span class="p0 token"></span>
+                <span class="p0 token"></span>
+                <span class="p0 token"></span>
+              </div>
+              <div class="squareZone">
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+              </div>
+            </div>
+            <div class="slide" data-slide="1" style="display: none">
+              <div class="squareZone">
+                <div class="fox"></div>
+                <div class="fox"></div>
+              </div>
+              <p>El primer jugador tira los dados (los dados van del 0 al 4) y mueve la ficha ese numero de cuadrados en la dirección que se puede apreciar en la imagen.</p>
+              <p>Si cae en una casilla especial se le otorga otro tiro de los dados para mover de nuevo antes de acabar su turno.</p>
+              <p>Para salir del tablero debe tener una tirada de dados exacta que le permita acceder a la última casilla.</p>
+              <img src="/img/GameOfUr-slide2.png" alt="Image showing the direction of movement of the game, starting from the outside and going up, then down the middle path and eventually outside again to the exit.">
+            </div>
+            <div class="slide" data-slide="2" style="display: none">
+              <div class="squareZone">
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+                <span class="p1 token"></span>
+              </div>
+              <p>La zona central se considera la zona de batalla y si un jugador cae en una casilla donde ya hay otro jugador, puede "comer" la ficha para devolverla al inicio a no ser que esté situada en una casilla especial, 
+                pues en ese caso se considera que la ficha está "protegida", por lo que es una buena estrategia mantener una ficha en la casilla especial mientras se avanza con las demás.</p>
+              <p>El primer jugador en sacar sus 7 fichas del tablero ganará la partida!</p>
+              <img src="/img/victory.png" alt="Victory image" style='width: 200px'>
+            </div>
+            <button class="nextSlide">Next Slide</button>
+          </div>
+        </div>
         <div id="boardDiv">
           <ul id="boardList">
             <li id="xx" class="boardMember">
@@ -64,21 +117,21 @@
           <button id="restart">Restart</button>
           <p></p>
         </div>
+        <button id="newGame">Nueva Partida</button>
         <div id="diceRoll">
         </div>
-        <button id="skipTurn">Skip Turn</button>
         <div id="toolBox">
-          <button id="newRoll">New Roll</button>
-          <button id="newGame">New Game</button>
+          <button id="newRoll">Tirar dados</button>
+          <button id="skipTurn">Saltar turno</button>
         </div>
         <div id="infoDiv">
           <ul class="infoDisplayP1">
-            <li class="infoDisplayData">Player 1: <span class="infoDisplayFeed">Tana</span></li>
+            <li class="infoDisplayData player1">Player 1</li>
             <li class="infoDisplayData">Tokens: <span id="infoDisplayp1Token" class="infoDisplayFeed">7</span></li>
             <li class="infoDisplayData">Points: <span id="infoDisplayp1Points" class="infoDisplayFeed">0</span></li>
           </ul>
           <ul class="infoDisplayP2">
-            <li class="infoDisplayData">Player 2: <span class="infoDisplayFeed">Suso</span></li>
+            <li class="infoDisplayData player2">Player 2</li>
             <li class="infoDisplayData">Tokens: <span id="infoDisplayp2Token" class="infoDisplayFeed">7</span></li>
             <li class="infoDisplayData">Points: <span id="infoDisplayp2Points" class="infoDisplayFeed">0</span></li>
           </ul>
@@ -87,6 +140,10 @@
         </div>
       </main>
       <canvas id="confetti" width="1" height="1"></canvas>
+      <footer>
+        <p>© Made by <a href="https://angelcasasblog.herokuapp.com/ES">Ángel Casas Pescador</a>.</p>
+        <p> Hosted in <a href="https://github.com/Angel-Casas/GameOfUr">Github</a>, if you see any bug please open an issue on the Github repository.</p>
+      </footer>
     </div>
     <script type="text/javascript" src="./JS/main.js"></script>
     <script src="./JS/DragDropTouch.js"></script>

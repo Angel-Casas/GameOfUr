@@ -120,6 +120,7 @@ html {
 }
 #wrapper {
   min-height: 100vh;
+  font-size: 2rem;
   background-color: rgb(30, 30, 30);
 }
 h1, h2, h3, h4, h5 {
@@ -145,6 +146,68 @@ header {
   padding: 10px 0;
   color: rgb(221, 182, 78);
 }
+
+/* INTRODUCTION */
+
+#introduction {
+  position: absolute;
+  display: none;
+  background-color: rgb(30, 30, 30);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  text-align: center;
+  border-radius: 1rem;
+}
+.slide {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.6rem;
+  padding: 2rem;
+}
+.slide p {
+  margin: 1.6rem 0;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+}
+.slide p::before {
+  content: '-';
+  color: rgb(221, 182, 78);
+  font-size: 4.5rem;
+  line-height: 0;
+  margin-right: 1rem;
+}
+.nextSlide {
+  width: 68px;
+	background-size: 68px;
+	background-repeat: no-repeat;
+	border-radius: unset;
+	min-height: 68px;
+	height: auto;
+	color: rgb(221, 182, 78);
+  cursor: pointer;
+  transition: all .15s ease-in-out;
+}
+.nextSlide:hover {
+  background-color: rgb(221, 182, 78);
+  color: black;
+}
+.squareIntro {
+  border: 1px solid white;
+  width: 60px;
+  height: 60px;
+}
+.squareZone {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* GAME CSS */
+
 #mainWrapper {
   position: relative;
   display: flex;
@@ -154,7 +217,9 @@ header {
   height: 100%;
   border: 1px solid white;
   border-radius: 1rem;
-  margin: 0 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 #boardDiv {
   display: flex;
@@ -336,7 +401,7 @@ header {
   height: 100%;
 }
 .turn::before {
-  content: "Your Turn";
+  content: "Tu turno";
   position: absolute;
   bottom: -38px;
   border-top: 2px solid white;
@@ -356,6 +421,12 @@ header {
 }
 .p1 {
   background-color: rgb(89, 154, 201);
+}
+.player1 {
+  border-bottom: 2px solid rgb(255, 70, 70);
+}
+.player2 {
+  border-bottom: 2px solid rgb(89, 154, 201);
 }
 #victory {
   display: none;
@@ -419,6 +490,7 @@ header {
   text-align: center;
   font-size: 2.4rem;
   height: 100px;
+  animation: dice .2s linear infinite;
 }
 #toolBox {
   margin: 5px 0;
@@ -430,7 +502,7 @@ button {
   padding: 10px;
   border: 1px solid rgb(221, 182, 78);
   cursor: pointer;
-  z-index: 10000;
+  margin: 1rem;
 }
 button:hover {
   color: rgb(30, 30, 30);
@@ -440,6 +512,7 @@ button:hover {
   min-height: 60px;
   width: 200px;
   text-align: center;
+  margin: 1rem 0;
 }
 #dialogBox h5 {
   text-decoration: underline;
@@ -458,4 +531,28 @@ button:hover {
 #dialogBox p::before {
   content: "";
   padding-right: 5px;
+}
+/* FOOTER CSS */
+
+footer {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+footer a {
+  text-decoration: underline;
+}
+
+/* ANIMATION */
+
+@keyframes dice {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

@@ -15,6 +15,49 @@ let newB;
 let dragged;
 let listPlaces = ["xx", "yy", "aa", "ab", "ac", "ba", "bb", "bc", "ca", "cb", "cc", "da", "db", "dc", "eb", "end0", "fb", "end1", "ga", "gb", "gc", "ha", "hb", "hc"];
 
+
+// INTRODUCTION HANDLER
+function introductionHandle(bool) {
+  // Display or hide Introduction and add EventListener
+  let intro = document.querySelector("#introduction");
+
+  if (bool) {
+
+    intro.style.display = "block";
+    document.querySelector(".nextSlide").addEventListener("click", changeSlide, false);
+  } else {
+    intro.innerHTML = "";
+    intro.style.display = "none";
+  }
+
+  return;
+}
+
+function changeSlide() {
+  // Changes slides in #introduction
+  let slides = document.querySelectorAll(".slide");
+
+  for (var el of slides) {
+    if (el.style.display == "block") {
+      let index = Number(el.getAttribute("data-slide")) + 1;
+
+      el.style.display = "none";
+      if (slides[index]) {
+        slides[index].style.display = "block";
+      } else {
+        slides[0].style.display = "block";
+        document.querySelector("#introduction").style.display = "none";
+        document.querySelector("#winner").style.display = "none";
+        document.querySelector("#confetti").style.display = "none";
+      }
+
+      return;
+    }
+  }
+
+  return;
+}
+
 // INIT
 
 window.onload = init;
@@ -327,7 +370,7 @@ function displayDiceRoll() {
   let result = diceRoll(4, 4);
 
   warning.innerHTML = "";
-  diceID.innerHTML = "DiceRoll: <br>" + result;
+  diceID.innerHTML = "Tirada de dados: <br>" + result;
   newB.roll = result;
 
   return result;
@@ -567,6 +610,15 @@ function handleDragEnd(e) {
 
 // EVENT LISTENERS
 
+document.getElementById('btnIntro').addEventListener("click", introductionHandle, false);
+
+document.getElementById('newRoll').addEventListener('click', function() {
+  document.getElementById("diceRoll").style.webkitAnimationPlayState = "running";
+    setTimeout(function() {
+        document.getElementById("diceRoll").style.webkitAnimationPlayState = "paused";
+    }, 200);
+});
+
 document.body.addEventListener("keydown", function(e) {
   e.preventDefault();
   if (e.keyCode ==  32) {
@@ -605,7 +657,6 @@ skipTurn.addEventListener("click", function(e) {
   newB.newTurn();
   newB.rolled = false;
 }, false);
-
 
 // CONFETTI - EXTRA
 
